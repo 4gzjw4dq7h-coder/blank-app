@@ -35,23 +35,25 @@ Dieses Dashboard visualisiert die vier Säulen der Theorie. Optimierte Berechnun
 
 # --- HELPER: PLOTLY CHARTS ---
 def plot_line_chart(x, y, title, xlabel, ylabel, color='#00ccff', trend_y=None):
-    fig = go.Figure()
-    fig.add_trace(go.Scatter(x=x, y=y, mode='lines', name='Signal', line=dict(color=color, width=2)))
-    
-    if trend_y is not None:
-        fig.add_trace(go.Scatter(x=x, y=trend_y, mode='lines', name='Trend', line=dict(color='white', width=1, dash='dash')))
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=x, y=y, mode='lines', name='Signal', line=dict(color=color, width=2)))
+    
+    # Optionaler Trend
+    if trend_y is not None:
+        fig.add_trace(go.Scatter(x=x, y=trend_y, mode='lines', name='Trend', line=dict(color='white', width=1, dash='dash')))
 
-    fig.update_layout(
-        title=title,
-        xaxis_title=xlabel,
-        yaxis_title=ylabel,
-        template="plotly_dark",
-        margin=dict(l=20, r=20, t=40, b=20),
-        height=400,
-        hovermode="x unified"
-    )
-    return fig
-
+    # Layout Update
+    fig.update_layout(
+        title=title,
+        xaxis_title=xlabel,
+        yaxis_title=ylabel,
+        template="plotly_dark",
+        margin=dict(l=20, r=20, t=40, b=20),
+        height=400,
+        hovermode="x unified"
+    )
+    return fig
+    
 # --- RECHENKERNE (Optimiert) ---
 
 @st.cache_data
