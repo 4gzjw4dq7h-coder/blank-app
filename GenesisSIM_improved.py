@@ -8,14 +8,16 @@ import plotly.graph_objects as go
 import plotly.express as px
 from scipy.linalg import expm
 
-# --- KONFIGURATION ---
+# HIER ist der einzige richtige Platz:
 st.set_page_config(
-    page_title="SDRIS Framework Simulation Pro",
+    page_title="SDRIS Framework Simulation Pro", 
     page_icon="🌌",
-    layout="wide"
+    layout="wide"
 )
 
-# Custom CSS für professionelleren Look
+# Erst danach darf der Rest kommen:
+st.markdown(...) 
+st.title(...)# Custom CSS für professionelleren Look
 st.markdown("""
 <style>
     .stApp { background-color: #0E1117; }
