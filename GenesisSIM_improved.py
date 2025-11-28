@@ -10,8 +10,8 @@ from scipy.linalg import expm
 
 # --- KONFIGURATION ---
 st.set_page_config(
-    page_title="SDRIS Framework Simulation Pro", 
-    page_icon="🌌",
+    page_title="SDRIS Framework Simulation Pro",
+    page_icon="🌌",
     layout="wide"
 )
 
@@ -153,7 +153,7 @@ def simulate_flux_tunnel_dynamics(n_dim, damping_type, base_rate, steps=40):
         norm = np.linalg.norm(current_psi)
         norms.append(norm)
         t_vals.append(t * dt)
-        
+        
         # A. Unitary Step
         current_psi = U @ current_psi
         
